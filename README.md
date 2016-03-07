@@ -1,4 +1,5 @@
-project
-=======
+This is a public repository to show Different Skills of web development.
 
-A Symfony project created on March 7, 2016, 2:27 pm.
+USAGE:
+php app/console doctrine:database:create
+php app/console doctrine:schema:update --force
