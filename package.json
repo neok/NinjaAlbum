@@ -1,6 +1,6 @@
 {
-  "name": "florianv-notes",
-  "version": "1.0.0",
+  "name": "ninja",
+  "version": "0.0.1",
   "private": true,
   "devDependencies": {
     "grunt": "^0.4.5",
