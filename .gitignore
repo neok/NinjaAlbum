@@ -14,4 +14,4 @@ node_modules
 .idea/
 .sass-cache/
 bower_components
-
+web/album/*
