@@ -1,1 +1,29 @@
-Hello World!
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Ninja Album</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link href="{{ asset('album/css/main.css') }}" rel="stylesheet"/>
+    <link rel="icon" href="{{ asset('favicon.ico') }}"/>
+
+
+</head>
+
+<body>
+<div class="wrapper">
+</div>
+{% block javascripts %}
+    <script data-main="{{ asset('album/js/main.js') }}" src="{{ asset('album/js/vendor/require.js') }}"></script>
+    <script>
+        define('config', function () {
+            return {
+                baseUrl: '{{ app.request.getBaseURL() }}'
+            }
+        });
+    </script>
+{% endblock %}
+</body>

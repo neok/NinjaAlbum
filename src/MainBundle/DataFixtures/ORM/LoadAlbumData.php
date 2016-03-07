@@ -16,7 +16,7 @@ class LoadAlbumData implements FixtureInterface, ContainerAwareInterface
 
     public function load(ObjectManager $manager)
     {
-        
+
         for ($i = 0; $i < 5; $i++) {
             $maxImgCount = $i === 0 ? 5 : 20;
             $album = new Album();
@@ -28,9 +28,7 @@ class LoadAlbumData implements FixtureInterface, ContainerAwareInterface
                 $img->setAlbum($album);
                 $manager->persist($img);
             }
-
         }
-
 
         $manager->flush();
     }

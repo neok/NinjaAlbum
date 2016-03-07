@@ -1,0 +1,1 @@
+(function(){define(["config","backbone","marionette"],function(a,b,c){var d;return d=new c.Application})}).call(this);
