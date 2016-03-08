@@ -2,13 +2,13 @@ define [
   'config'
   'backbone'
   'marionette'
-  'bus'
+  'wreqr'
   'apps/main/app'
 ], (
   Config
   Backbone
   Marionette
-  bus
+  wreqr
   MainApp
 ) ->
 
@@ -21,7 +21,7 @@ define [
   app.addInitializer ->
     MainApp.start()
 
-  bus.reqres.setHandler 'main_region', ->
+  wreqr.reqres.setHandler 'main_region', ->
     app.mainRegion
 
   app

@@ -1,7 +1,7 @@
 define [
   'backbone'
   'marionette'
-  'text!./main.html'
+  'text!templates/main/main.html'
 ], (
   Backbone
   Marionette
@@ -10,3 +10,7 @@ define [
 
   class MainView extends Marionette.ItemView
     template: templateMain
+    events: 'click .click': 'alertBox'
+    alertBox: ->
+      alert 'Button Clicked'
+      return
