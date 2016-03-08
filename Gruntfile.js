@@ -44,8 +44,12 @@ module.exports = function (grunt) {
                         dest: '<%= jsDir %>/vendor/babysitter.js'
                     },
                     {
-                        src: ['<%= componentsDir %>/backbone.marionette/lib/core/amd/backbone.marionette.js'],
+                        src: ['<%= componentsDir %>/backbone.marionette/lib/core/backbone.marionette.js'],
                         dest: '<%= jsDir %>/vendor/marionette.js'
+                    },
+                    {
+                        src: ['<%= componentsDir %>/marionette.components/dist/marionette.components.js'],
+                        dest: '<%= jsDir %>/vendor/marionette.components.js'
                     },
                     {
                         src: ['<%= componentsDir %>/backbone.wreqr/lib/backbone.wreqr.js'],

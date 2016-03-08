@@ -16,6 +16,7 @@ requirejs.config
     moment: 'vendor/moment'
     'backbone.queryparams': 'vendor/backbone.queryparams'
 
+
 shim:
   bootstrap:
     deps: ['jquery']
