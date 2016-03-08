@@ -1,10 +1,19 @@
-
 define [
   'marionette'
+  'syphon'
+  'wreqr'
+  'views/main/list'
   'views/main/main'
-], (Marionette, MainView) ->
+  'repo'
+], (
+  Marionette
+  Syphon
+  wreqr
+  ListView
+  MainView
+) ->
 
-  class MainController extends Marionette.Controller
+  class ListController extends Marionette.Controller
 
     constructor: (options = {}) ->
       @region = options.region
@@ -18,10 +27,3 @@ define [
     show: (view) ->
       @listenTo view, 'close', @close
       @region.show view
-
-    initialize: ->
-      MainView = @getMainView()
-      @show MainView
-
-    getMainView: ->
-      new MainView

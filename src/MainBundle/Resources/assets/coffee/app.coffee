@@ -3,7 +3,7 @@ define [
   'backbone'
   'marionette'
   'wreqr'
-  'apps/main/app'
+  'routers/main/app'
 ], (
   Config
   Backbone

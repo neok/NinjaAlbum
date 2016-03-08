@@ -1,16 +1,7 @@
 define [
-  'backbone'
   'marionette'
   'text!templates/main/main.html'
-], (
-  Backbone
-  Marionette
-  templateMain
-) ->
+], (Marionette, Template) ->
 
-  class MainView extends Marionette.ItemView
-    template: templateMain
-    events: 'click .click': 'alertBox'
-    alertBox: ->
-      alert 'Button Clicked'
-      return
+  class MainView extends Marionette.Layout
+    template: Template
