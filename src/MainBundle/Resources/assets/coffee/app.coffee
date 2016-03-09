@@ -4,7 +4,7 @@ define [
 ], (
   Marionette
 ) ->
-
+  
   AlbumManager = new Marionette.Application
 
   AlbumManager.navigate = (route, options) ->
@@ -53,8 +53,6 @@ define [
     AlbumManager.currentApp = currentApp
     if currentApp
       currentApp.start args
-
-
 
   AlbumManager.on 'start', ->
   if Backbone.history
