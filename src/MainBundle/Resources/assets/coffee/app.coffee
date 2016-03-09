@@ -58,10 +58,11 @@ define [
   if Backbone.history
     require [
       'apps/info/info_app'
+      'apps/albums/album_app'
     ], ->
       Backbone.history.start()
       if AlbumManager.getCurrentRoute() == ''
-        AlbumManager.trigger 'info:show'
+        AlbumManager.trigger 'albums:list'
 
 
   AlbumManager

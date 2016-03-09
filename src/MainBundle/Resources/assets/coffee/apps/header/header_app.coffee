@@ -9,7 +9,6 @@ define [
 
     AlbumManager.commands.setHandler 'set:active:header', (name) ->
       List.Controller.setActiveHeader name
-      return
 
     Header.on 'start', ->
       API.listHeader()

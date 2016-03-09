@@ -1,6 +1,6 @@
 define [
   'app'
-  'text!apps/header/list/templates/list.html'
+  'tpl!apps/header/list/templates/list.tpl'
   'tpl!apps/header/list/templates/list_item.tpl'
 ], (AlbumManager, listTpl, listItemTpl) ->
   AlbumManager.module 'HeaderApp.List.View', (View, AlbumManager, Backbone, Marionette, $, _) ->

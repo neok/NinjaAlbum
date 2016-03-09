@@ -42,6 +42,7 @@ requirejs.config
 require [
   'app'
   "apps/info/info_app"
+  "apps/albums/album_app"
   "apps/header/header_app"
 ], (AlbumManager) ->
   AlbumManager.start()

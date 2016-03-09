@@ -27,13 +27,10 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $f = fopen('/tmp/test.txt', 'a+');
-        fwrite($f, 'test' . "\n");
-        fclose($f);
+
         return [
-            ['path' => 'path'],
-            ['path' => 'path2'],
-            ['path' => 'path3']
+            ['id' => 1, 'name' => 'Odin'],
+            ['id' => 2, 'name' => 'fffff']
         ];
     }
 
@@ -51,10 +48,6 @@ class DefaultController extends Controller
      */
     public function getAlbumAction(Request $request)
     {
-        return [
-            [
-                'path' => 'ORLY'
-            ]
-        ];
+        return ['id' => 1, 'name' => 'Odin'];
     }
 }

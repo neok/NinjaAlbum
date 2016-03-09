@@ -9,7 +9,7 @@ define [
           links = AlbumManager.request('header:entities')
           headers = new (View.Headers)(collection: links)
           headers.on 'brand:clicked', ->
-            AlbumManager.trigger 'contacts:list'
+            AlbumManager.trigger 'album:list'
 
           headers.on 'childview:navigate', (childView, model) ->
             trigger = model.get('navigationTrigger')

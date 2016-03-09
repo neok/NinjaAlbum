@@ -24,7 +24,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: '<%= coffeeDir %>',
-                        src: ['**/*.html'],
+                        src: ['**/*.tpl'],
                         dest: '<%= jsDir %>'
                     }
                 ]
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
                         dest: '<%= jsDir %>/vendor/backbone.picky.js'
                     },
                     {
-                        src: ['<%= componentsDir %>/backbone.localStorage/backbone.localStorage.js'],
+                        src: ['<%= componentsDir %>/backbone.localstorage/backbone.localStorage.js'],
                         dest: '<%= jsDir %>/vendor/backbone.localstorage.js'
                     },
                     {
