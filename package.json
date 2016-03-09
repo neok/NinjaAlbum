@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-coffeelint": "~0.*",
-    "grunt-contrib-clean": "~0.*",
-    "grunt-contrib-coffee": "~0.*",
-    "grunt-contrib-compass": "~0.*",
-    "grunt-contrib-copy": "~0.*",
-    "grunt-contrib-uglify": "~0.*",
-    "grunt-contrib-watch": "~0.*",
-    "requirejs": "~2.*"
+    "grunt": "*",
+    "grunt-coffeelint": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-compass": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "requirejs": "*"
   }
 }

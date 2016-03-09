@@ -1,5 +1,6 @@
 This is a public repository to show Different Skills of web development.
 
+
 USAGE:
 ---
 - php app/console doctrine:database:create
@@ -8,3 +9,8 @@ USAGE:
 - npm install
 - bower install
 - grunt
+
+@TODO
+---
+- fix copying tpl files
+-

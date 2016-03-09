@@ -88,7 +88,7 @@ module.exports = function (grunt) {
                         dest: '<%= jsDir %>/vendor/underscore.js'
                     },
                     {
-                        src: ['<%= componentsDir %>/underscore-tpl/dist/underscore-tpl.js'],
+                        src: ['<%= componentsDir %>/requirejs-underscore-tpl/underscore-tpl.js'],
                         dest: '<%= jsDir %>/vendor/underscore-tpl.js'
                     },
                     {
@@ -128,23 +128,23 @@ module.exports = function (grunt) {
         },
 
         // Compiles the sass files into the public js
-        compass: {
-            dev: {
-                options: {
-                    sassDir: '<%= sassDir %>',
-                    cssDir: '<%= cssDir %>',
-                    environment: 'development'
-                }
-            },
-            prod: {
-                options: {
-                    sassDir: '<%= sassDir %>',
-                    cssDir: '<%= cssDir %>',
-                    environment: 'production',
-                    outputStyle: 'compressed'
-                }
-            }
-        },
+        //compass: {
+        //    dev: {
+        //        options: {
+        //            sassDir: '<%= sassDir %>',
+        //            cssDir: '<%= cssDir %>',
+        //            environment: 'development'
+        //        }
+        //    },
+        //    prod: {
+        //        options: {
+        //            sassDir: '<%= sassDir %>',
+        //            cssDir: '<%= cssDir %>',
+        //            environment: 'production',
+        //            outputStyle: 'compressed'
+        //        }
+        //    }
+        //},
 
         // Compiles coffee files
         coffee: {
@@ -219,10 +219,10 @@ module.exports = function (grunt) {
     grunt.registerTask('templates:watch', ['copy:templates']);
 
     // Task to run when deploying
-    grunt.registerTask('dev', ['clean', 'copy:templates', 'copy:js', 'compass:prod', 'coffee']);
+    grunt.registerTask('dev', ['clean', 'copy:templates', 'copy:js', 'coffee']);
 
     // Task to run when deploying
-    grunt.registerTask('prod', ['clean', 'copy:templates', 'copy:js', 'compass:prod', 'coffee', 'uglify']);
+    grunt.registerTask('prod', ['clean', 'copy:templates', 'copy:js', 'coffee', 'uglify']);
 
     // Default task
     grunt.registerTask('default', ['prod']);

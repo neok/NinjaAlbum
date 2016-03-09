@@ -15,8 +15,8 @@ requirejs.config
     spin: "vendor/spin"
     "spin.jquery": "vendor/jquery.spin"
     text: "vendor/text"
-    tpl: "vendor/underscore-tpl"
     underscore: "vendor/underscore"
+    tpl: "vendor/underscore-tpl"
 
   shim:
     bootstrap:

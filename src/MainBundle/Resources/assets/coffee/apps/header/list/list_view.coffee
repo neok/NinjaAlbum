@@ -1,7 +1,7 @@
 define [
   'app'
   'text!apps/header/list/templates/list.html'
-  'text!apps/header/list/templates/list_item.html'
+  'tpl!apps/header/list/templates/list_item.tpl'
 ], (AlbumManager, listTpl, listItemTpl) ->
   AlbumManager.module 'HeaderApp.List.View', (View, AlbumManager, Backbone, Marionette, $, _) ->
     View.Header = Marionette.ItemView.extend(
