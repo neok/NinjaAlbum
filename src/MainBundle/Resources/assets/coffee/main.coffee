@@ -1,28 +1,46 @@
 requirejs.config
+  waitSeconds: 10
   paths:
-    backbone: 'vendor/backbone'
-    syphon: 'vendor/syphon'
-    underscore: 'vendor/underscore'
-    jquery: 'vendor/jquery'
-    'jquery.cookie': 'vendor/jquery.cookie'
-    spin: 'vendor/spin'
-    'jquery.spin': 'vendor/jquery.spin'
-    bootstrap: 'vendor/bootstrap'
-    marionette: 'vendor/marionette'
-    'backbone.babysitter': 'vendor/babysitter'
-    'backbone.wreqr': 'vendor/wreqr'
-    text: 'vendor/text'
-    handlebars: 'vendor/handlebars'
-    moment: 'vendor/moment'
-    'backbone.queryparams': 'vendor/backbone.queryparams'
+    backbone: "vendor/backbone"
+    "backbone.picky": "vendor/backbone.picky"
+    "backbone.syphon": "vendor/backbone.syphon"
+    jquery: "vendor/jquery"
+    lodash: "vendor/lodash"
+    "jquery-ui": "vendor/jquery-ui"
+    json2: "vendor/json2"
+    localstorage: "vendor/backbone.localstorage"
+    marionette: "vendor/backbone.marionette"
+    'backbone.babysitter': 'vendor/backbone.babysitter'
+    'backbone.wreqr': 'vendor/backbone.wreqr'
+    spin: "vendor/spin"
+    "spin.jquery": "vendor/jquery.spin"
+    text: "vendor/text"
+    tpl: "vendor/underscore-tpl"
+    underscore: "vendor/underscore"
 
+  shim:
+    bootstrap:
+      deps: ['jquery']
+    underscore:
+      exports: "_"
 
-shim:
-  bootstrap:
-    deps: ['jquery']
+    backbone:
+      deps: ["jquery", "underscore", "json2"]
+      exports: "Backbone"
+
+    "backbone.picky": ["backbone"]
+    "backbone.syphon": ["backbone"]
+    marionette:
+      deps: ["backbone"]
+      exports: "Marionette"
+
+    "jquery-ui": ["jquery"]
+    localstorage: ["backbone"]
+    "spin.jquery": ["spin", "jquery"]
+    tpl: ["text"]
 
 require [
   'app'
-  'backbone.queryparams'
-], (App) ->
-         App.start()
+  "apps/info/info_app"
+], (AlbumManager) ->
+  AlbumManager.start()

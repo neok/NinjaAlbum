@@ -41,11 +41,27 @@ module.exports = function (grunt) {
                     },
                     {
                         src: ['<%= componentsDir %>/backbone.babysitter/lib/backbone.babysitter.js'],
-                        dest: '<%= jsDir %>/vendor/babysitter.js'
+                        dest: '<%= jsDir %>/vendor/backbone.babysitter.js'
+                    },
+                    {
+                        src: ['<%= componentsDir %>/backbone.picky/lib/amd/backbone.picky.js'],
+                        dest: '<%= jsDir %>/vendor/backbone.picky.js'
+                    },
+                    {
+                        src: ['<%= componentsDir %>/backbone.localStorage/backbone.localStorage.js'],
+                        dest: '<%= jsDir %>/vendor/backbone.localstorage.js'
+                    },
+                    {
+                        src: ['<%= componentsDir %>/json2/json2.js'],
+                        dest: '<%= jsDir %>/vendor/json2.js'
+                    },
+                    {
+                        src: ['<%= componentsDir %>/jquery-ui/jquery-ui.js'],
+                        dest: '<%= jsDir %>/vendor/jquery-ui.js'
                     },
                     {
                         src: ['<%= componentsDir %>/backbone.marionette/lib/core/backbone.marionette.js'],
-                        dest: '<%= jsDir %>/vendor/marionette.js'
+                        dest: '<%= jsDir %>/vendor/backbone.marionette.js'
                     },
                     {
                         src: ['<%= componentsDir %>/marionette.components/dist/marionette.components.js'],
@@ -53,7 +69,11 @@ module.exports = function (grunt) {
                     },
                     {
                         src: ['<%= componentsDir %>/backbone.wreqr/lib/backbone.wreqr.js'],
-                        dest: '<%= jsDir %>/vendor/wreqr.js'
+                        dest: '<%= jsDir %>/vendor/backbone.wreqr.js'
+                    },
+                    {
+                        src: ['<%= componentsDir %>/lodash/dist/lodash.js'],
+                        dest: '<%= jsDir %>/vendor/lodash.js'
                     },
                     {
                         src: ['<%= componentsDir %>/requirejs/require.js'],
@@ -68,12 +88,16 @@ module.exports = function (grunt) {
                         dest: '<%= jsDir %>/vendor/underscore.js'
                     },
                     {
+                        src: ['<%= componentsDir %>/underscore-tpl/dist/underscore-tpl.js'],
+                        dest: '<%= jsDir %>/vendor/underscore-tpl.js'
+                    },
+                    {
                         src: ['<%= componentsDir %>/handlebars/handlebars.amd.js'],
                         dest: '<%= jsDir %>/vendor/handlebars.js'
                     },
                     {
                         src: ['<%= componentsDir %>/backbone.syphon/lib/backbone.syphon.js'],
-                        dest: '<%= jsDir %>/vendor/syphon.js'
+                        dest: '<%= jsDir %>/vendor/backbone.syphon.js'
                     },
                     {
                         src: ['<%= componentsDir %>/bootstrap-sass/assets/javascripts/bootstrap.js'],

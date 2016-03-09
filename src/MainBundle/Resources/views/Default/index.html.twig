@@ -14,14 +14,13 @@
 </head>
 
 <body>
-<div class="wrapper">
-    &nbsp;
-    <div class="header">
-
+<div id="app-container">
+    <div id="header-region"></div>
+    <div id="main-region" class="container">
+        <p>Here is static content.</p>
     </div>
-    <div class="main-body">
 
-    </div>
+    <div id="dialog-region"></div>
 </div>
 {% block javascripts %}
     <script data-main="{{ asset('album/js/main.js') }}" src="{{ asset('album/js/vendor/require.js') }}"></script>
