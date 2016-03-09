@@ -1,5 +1,5 @@
 requirejs.config
-  waitSeconds: 10
+  waitSeconds: 15
   paths:
     backbone: "vendor/backbone"
     "backbone.picky": "vendor/backbone.picky"
@@ -42,5 +42,6 @@ requirejs.config
 require [
   'app'
   "apps/info/info_app"
+  "apps/header/header_app"
 ], (AlbumManager) ->
   AlbumManager.start()

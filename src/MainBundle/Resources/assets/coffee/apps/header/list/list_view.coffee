@@ -1,7 +1,7 @@
 define [
   'app'
-  'tpl!apps/header/list/templates/list.tpl'
-  'tpl!apps/header/list/templates/list_item.tpl'
+  'text!apps/header/list/templates/list.html'
+  'text!apps/header/list/templates/list_item.html'
 ], (AlbumManager, listTpl, listItemTpl) ->
   AlbumManager.module 'HeaderApp.List.View', (View, AlbumManager, Backbone, Marionette, $, _) ->
     View.Header = Marionette.ItemView.extend(
@@ -13,12 +13,11 @@ define [
         @trigger 'navigate', @model
       onRender: ->
         if @model.selected
-# add class so Bootstrap will highlight the active entry in the navbar
           @$el.addClass 'active'
     )
     View.Headers = Marionette.CompositeView.extend(
       template: listTpl
-      className: 'navbar navbar-inverse navbar-fixed-top'
+      className: 'navbar'
       childView: View.Header
       childViewContainer: 'ul'
       events: 'click a.brand': 'brandClicked'

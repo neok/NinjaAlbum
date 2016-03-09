@@ -9,6 +9,7 @@ define [
     require [ 'apps/info/show/show_controller' ], (ShowController) ->
       AlbumManager.startSubApp null
       ShowController.showAbout()
+      AlbumManager.execute 'set:active:header', 'info'
 
   AlbumManager.on 'info:show', ->
     AlbumManager.navigate 'info'

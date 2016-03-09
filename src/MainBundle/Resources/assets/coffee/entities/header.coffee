@@ -17,14 +17,14 @@ define [
     initializeHeaders = ->
       Entities.headers = new (Entities.HeaderCollection)([
         {
-          name: 'Contacts'
-          url: 'contacts'
-          navigationTrigger: 'contacts:list'
+          name: 'Albums'
+          url: 'albums'
+          navigationTrigger: 'albums:list'
         }
         {
           name: 'Info'
           url: 'info'
-          navigationTrigger: 'about:show'
+          navigationTrigger: 'info:show'
         }
       ])
 
