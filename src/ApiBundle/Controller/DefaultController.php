@@ -27,13 +27,8 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
+       return $this->container->get('album.service')->getAlbumList();
 
-        return [
-            ['id' => 1, 'name' => 'Ninjas'],
-            ['id' => 2, 'name' => 'Animals'],
-            ['id' => 3, 'name' => 'Girls'],
-            ['id' => 4, 'name' => 'Games']
-        ];
     }
 
     /**
@@ -50,6 +45,6 @@ class DefaultController extends Controller
      */
     public function getAlbumAction(Request $request)
     {
-        return ['id' => 444, 'name' => 'Odin'];
+        return $this->container->get('album.service')->getOne($request->get('album_id'));
     }
 }

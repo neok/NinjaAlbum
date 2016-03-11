@@ -1,4 +1,5 @@
 services:
-#    api.example:
-#        class: ApiBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    album.service:
+        class: ApiBundle\Services\Album
+        arguments:
+            container: "@service_container"
