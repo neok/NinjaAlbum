@@ -29,8 +29,10 @@ class DefaultController extends Controller
     {
 
         return [
-            ['id' => 1, 'name' => 'Odin'],
-            ['id' => 2, 'name' => 'fffff']
+            ['id' => 1, 'name' => 'Ninjas'],
+            ['id' => 2, 'name' => 'Animals'],
+            ['id' => 3, 'name' => 'Girls'],
+            ['id' => 4, 'name' => 'Games']
         ];
     }
 
@@ -48,6 +50,6 @@ class DefaultController extends Controller
      */
     public function getAlbumAction(Request $request)
     {
-        return ['id' => 1, 'name' => 'Odin'];
+        return ['id' => 444, 'name' => 'Odin'];
     }
 }

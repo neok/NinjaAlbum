@@ -16,6 +16,7 @@ define [
       tagName: 'tr'
       template: listItemTpl
       events: 'click': 'highlightName'
+      triggers: 'click td a.js-show': 'album:show'
 
     )
 

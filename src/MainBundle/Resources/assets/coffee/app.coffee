@@ -23,6 +23,7 @@ define [
     regions:
       header: '#header-region'
       main: '#main-region'
+      left: '#left-region'
       dialog: '#dialog-region')
   AlbumManager.regions = new RegionContainer
 
