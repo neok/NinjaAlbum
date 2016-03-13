@@ -2,4 +2,4 @@ services:
     album.service:
         class: ApiBundle\Services\Album
         arguments:
-            container: "@service_container"
+            [ "@doctrine.orm.entity_manager", "@knp_paginator" ]

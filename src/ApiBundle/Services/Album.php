@@ -3,6 +3,7 @@
 namespace ApiBundle\Services;
 
 
+use Doctrine\ORM\EntityManager;
 use MainBundle\Repository\AlbumRepository;
 use Knp\Component\Pager\Paginator;
 
@@ -12,11 +13,14 @@ class Album
     const ITEMS_PER_PAGE = 10;
     const MIN_ALBUM_IMAGE = 10;
 
-    protected $container;
+    protected $docrine;
+    protected $paginator;
 
-    public function __construct(\Symfony\Component\DependencyInjection\Container $container)
+    public function __construct(EntityManager $docrine,
+                                Paginator $paginator)
     {
-        $this->container = $container;
+        $this->docrine = $docrine;
+        $this->paginator = $paginator;
     }
 
     /**
@@ -24,7 +28,7 @@ class Album
      */
     public function getDoctrine()
     {
-        return $this->getContainer()->get('doctrine');
+        return $this->docrine;
     }
 
     /**
@@ -37,12 +41,20 @@ class Album
     }
 
     /**
-     * @return \Symfony\Component\DependencyInjection\Container
+     * @return Paginator
      */
-    public function getContainer()
+    public function getPaginator()
     {
-        return $this->container;
+        return $this->paginator;
     }
+
+//    /**
+//     * @return \Symfony\Component\DependencyInjection\Container
+//     */
+//    public function getContainer()
+//    {
+//        return $this->container;
+//    }
 
     /**
      * @return array
@@ -97,7 +109,7 @@ class Album
         /**
          * @var Paginator $paginator
          */
-        $paginator = $this->getContainer()->get('knp_paginator');
+        $paginator = $this->getPaginator();
 
         return
             $paginator->paginate(
