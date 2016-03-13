@@ -12,4 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class ImageRepository extends EntityRepository
 {
+    /**
+     * @param $id
+     * @return \Doctrine\ORM\Query
+     */
+    public function getImagesByAlbumIdDQL($id)
+    {
+        $dql = $this->createQueryBuilder('p');
+        $dql->where('p.album = :album_id');
+        $dql->setParameters(array('album_id' => (int) $id));
+        return $dql;
+    }
 }

@@ -1,3 +1,7 @@
 main_homepage:
     path:     /
     defaults: { _controller: MainBundle:Default:index }
+
+test:
+    path:     /bro
+    defaults: { _controller: MainBundle:Default:test }

@@ -2,6 +2,8 @@
 
 namespace ApiBundle\Controller;
 
+use JMS\Serializer\SerializationContext;
+use Knp\Bundle\PaginatorBundle\KnpPaginatorBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FOS\RestBundle\Controller\Annotations\Delete;
@@ -11,6 +13,7 @@ use FOS\RestBundle\Controller\Annotations\Put;
 use FOS\RestBundle\Controller\Annotations\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -27,6 +30,9 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
+
+
+
        return $this->container->get('album.service')->getAlbumList();
 
     }
@@ -45,6 +51,21 @@ class DefaultController extends Controller
      */
     public function getAlbumAction(Request $request)
     {
-        return $this->container->get('album.service')->getOne($request->get('album_id'));
+        $data = $this->container->get('album.service')->getImages($request->get('id'), $request->get('page'));
+        $serializer = $this->get('jms_serializer');
+//        $representation = new Paginated
+//        $this->render('MainBundle:Default:tt.html.twig', array('pagination' => $data))->getContent()
+        return new Response(
+            $serializer->serialize(
+                $data,
+                'json',
+                SerializationContext::create()->setGroups(['Default'])
+            ) ,
+            Response::HTTP_OK,
+            [
+                'Content-Type' => 'application/json',
+            ]
+        );
+
     }
 }

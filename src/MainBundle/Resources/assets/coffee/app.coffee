@@ -8,6 +8,7 @@ define [
   AlbumManager = new Marionette.Application
 
   AlbumManager.navigate = (route, options) ->
+    console.log route
     if options == null
       options = {}
     Backbone.history.navigate route, options

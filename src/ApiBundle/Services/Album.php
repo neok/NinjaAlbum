@@ -3,11 +3,18 @@
 namespace ApiBundle\Services;
 
 
+use JMS\Serializer\SerializationContext;
 use MainBundle\Entity\Image;
 use MainBundle\Repository\AlbumRepository;
+use MainBundle\Repository\ImageRepository;
+use Knp\Component\Pager\Paginator;
 
 class Album
 {
+
+    const ITEMS_PER_PAGE = 10;
+    const MIN_ALBUM_IMAGE = 10;
+
     protected $container;
 
     public function __construct(\Symfony\Component\DependencyInjection\Container $container)
@@ -50,18 +57,60 @@ class Album
          * @var AlbumRepository $repository
          */
         $repository = $this->getRepository('MainBundle:Album');
+
         /**
          * @var \MainBundle\Entity\Album $album
          */
-        foreach ($repository->findAll() as $album) {
+        foreach ($repository->getList(self::MIN_ALBUM_IMAGE) as $albums) {
 
-            $result[] = [
-                'id' => $album->getId(),
-                'name' => $album->getName()
-            ];
+            foreach ($albums as $album)
+
+                if (is_array($album)
+                    && array_key_exists('id', $album)
+                    && array_key_exists('name', $album)
+                ) {
+                    $result[] = [
+                        'id' => $album['id'],
+                        'name' => $album['name']
+                    ];
+                }
+
+
         }
 
         return $result;
+    }
+
+    /**
+     * Get Images by albumId with pagination
+     *
+     * @param int $id
+     * @param int $page
+     * @return mixed
+     */
+    public function getImages($id, $page = 1)
+    {
+
+        $serializer = $this->getContainer()->get('jms_serializer');
+
+        /**
+         * @var \MainBundle\Repository\ImageRepository $repository
+         */
+        $repository = $this->getRepository('MainBundle:Image');
+
+        $query = $repository->getImagesByAlbumIdDQL((int)$id);
+        /**
+         * @var Paginator $paginator
+         */
+        $paginator = $this->getContainer()->get('knp_paginator');
+
+        return
+            $paginator->paginate(
+                $query,
+                $page,
+                self::ITEMS_PER_PAGE
+            );
+
     }
 
 }

@@ -12,5 +12,8 @@ USAGE:
 
 @TODO
 ---
-- fix copying tpl files
--
+- Add some styles
+- Make pagination active class
+- Delete AppBundle
+- Move Entity and other related stuff to ApiBundle
+

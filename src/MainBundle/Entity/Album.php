@@ -31,7 +31,7 @@ class Album
 
 
     /**
-     * @var @ORM\OneToMany(targetEntity="Image", mappedBy="id")
+     * @ORM\OneToMany(targetEntity="Image", mappedBy="album")
      */
     protected $images;
 

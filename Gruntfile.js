@@ -127,24 +127,24 @@ module.exports = function (grunt) {
             }
         },
 
-        // Compiles the sass files into the public js
-        //compass: {
-        //    dev: {
-        //        options: {
-        //            sassDir: '<%= sassDir %>',
-        //            cssDir: '<%= cssDir %>',
-        //            environment: 'development'
-        //        }
-        //    },
-        //    prod: {
-        //        options: {
-        //            sassDir: '<%= sassDir %>',
-        //            cssDir: '<%= cssDir %>',
-        //            environment: 'production',
-        //            outputStyle: 'compressed'
-        //        }
-        //    }
-        //},
+        //Compiles the sass files into the public js
+        compass: {
+            dev: {
+                options: {
+                    sassDir: '<%= sassDir %>',
+                    cssDir: '<%= cssDir %>',
+                    environment: 'development'
+                }
+            },
+            prod: {
+                options: {
+                    sassDir: '<%= sassDir %>',
+                    cssDir: '<%= cssDir %>',
+                    environment: 'production',
+                    outputStyle: 'compressed'
+                }
+            }
+        },
 
         // Compiles coffee files
         coffee: {
@@ -219,10 +219,10 @@ module.exports = function (grunt) {
     grunt.registerTask('templates:watch', ['copy:templates']);
 
     // Task to run when deploying
-    grunt.registerTask('dev', ['clean', 'copy:templates', 'copy:js', 'coffee']);
+    grunt.registerTask('dev', ['clean', 'copy:templates', 'copy:js', 'compass:dev', 'coffee']);
 
     // Task to run when deploying
-    grunt.registerTask('prod', ['clean', 'copy:templates', 'copy:js', 'coffee', 'uglify']);
+    grunt.registerTask('prod', ['clean', 'copy:templates', 'copy:js', 'compass:dev', 'coffee', 'uglify']);
 
     // Default task
     grunt.registerTask('default', ['prod']);

@@ -4,10 +4,12 @@ define [
 ], (AlbumManager) ->
   AlbumManager.module 'Entities', (Entities, AlbumManager, Backbone, Marionette, $, _) ->
     Entities.Album = Backbone.Model.extend(
-      urlRoot: 'api/album'
-      defaults:
-        name: ''
-
+      urlRoot: 'api/album/'
+      url: ->
+        url = this.urlRoot + this.id
+        if this.get 'page'
+          url += "?page=" + this.get('page')
+        url
     )
 
     #Entities.configureStorage 'AlbumManager.Entities.Album', Entities.Album
@@ -27,9 +29,9 @@ define [
           album.save()
         albums
 
-      getAlbumEntity: (albumId) ->
+      getAlbumEntity: (albumId, page) ->
 
-        album = new (Entities.Album)({id: albumId})
+        album = new (Entities.Album)({id: albumId, page: page})
         defer = $.Deferred()
         setTimeout  (->
           album.fetch(
@@ -39,15 +41,13 @@ define [
             error: (data) ->
               defer.resolve undefined
           )
-        ), 1000
+        ), 2500
         defer.promise()
 
     AlbumManager.reqres.setHandler 'album:entities', ->
       API.getAlbumEntities()
 
-    AlbumManager.reqres.setHandler 'album:entity', (id) ->
-      API.getAlbumEntity id
+    AlbumManager.reqres.setHandler 'album:entity', (id, page) ->
+      API.getAlbumEntity id, page
 
-    AlbumManager.reqres.setHandler 'album:entity:new', (id) ->
-      new (Entities.Album)
 

@@ -3,7 +3,7 @@ define [
   'apps/albums/show/show_view'
 ], (AlbumManager, View) ->
   AlbumManager.module 'AlbumApp.Show', (Show, AlbumManager, Backbone, Marionetter, $, _) ->
-    Show.Controller = showAlbum: (id) ->
+    Show.Controller = showAlbum: (id, page) ->
       require [
         'common/views'
         'entities/album'
@@ -11,7 +11,8 @@ define [
         loadingView = new CommonViews.Loading
         AlbumManager.regions.main.show loadingView
 
-        fetching = AlbumManager.request 'album:entity', id
+        fetching = AlbumManager.request 'album:entity', id, page
+
         $.when (fetching).done (album) ->
           albumView = new View.Album(
             model: album
