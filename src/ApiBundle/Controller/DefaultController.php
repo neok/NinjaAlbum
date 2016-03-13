@@ -31,8 +31,6 @@ class DefaultController extends Controller
     public function indexAction()
     {
 
-
-
        return $this->container->get('album.service')->getAlbumList();
 
     }
@@ -53,8 +51,6 @@ class DefaultController extends Controller
     {
         $data = $this->container->get('album.service')->getImages($request->get('id'), $request->get('page'));
         $serializer = $this->get('jms_serializer');
-//        $representation = new Paginated
-//        $this->render('MainBundle:Default:tt.html.twig', array('pagination' => $data))->getContent()
         return new Response(
             $serializer->serialize(
                 $data,

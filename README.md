@@ -16,4 +16,4 @@ USAGE:
 - Make pagination active class
 - Delete AppBundle
 - Move Entity and other related stuff to ApiBundle
-
+- implement Cache in Memcached service

@@ -29,8 +29,8 @@ define [
           hwaccel: false
           className: 'spinner'
           zIndex: 2e9
-          top: '30px'
-          left: 'auto'
+          top: '50%'
+          left: '50%'
         $('#spinner').spin opts
     )
 

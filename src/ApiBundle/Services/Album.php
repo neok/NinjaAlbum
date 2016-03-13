@@ -3,10 +3,7 @@
 namespace ApiBundle\Services;
 
 
-use JMS\Serializer\SerializationContext;
-use MainBundle\Entity\Image;
 use MainBundle\Repository\AlbumRepository;
-use MainBundle\Repository\ImageRepository;
 use Knp\Component\Pager\Paginator;
 
 class Album
@@ -90,8 +87,6 @@ class Album
      */
     public function getImages($id, $page = 1)
     {
-
-        $serializer = $this->getContainer()->get('jms_serializer');
 
         /**
          * @var \MainBundle\Repository\ImageRepository $repository
