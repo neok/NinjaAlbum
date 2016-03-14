@@ -1,21 +1,42 @@
-<div>
-    Items per page <%- num_items_per_page %>
-    <p><%- id %> <%- name %></p>
-    <% if (items.length <= 0) { %>
-        Not found
-    <% } else { %>
-        <% _.each(items, function(data) { %>
-    <div  class="image">
-        <p>Image Id:<%- data.id %><p>
-        <img src="<%- data.path %>" alt="img"/> </p>
+<% if (items.length <= 0) { %>
+    <p class="error">Not found</p>
+<% } else { %>
+<% _.each(items, function(data) { %>
+    <div class="image">
+        <span>Image Id:<%- data.id %></span>
+        <img src="<%- data.path %>" alt="img"/>
     </div>
-        <% }); %>
-    <% } %>
+<% }); %>
+<% } %>
 
-    <div class="pagination">
+<div class="pagination">
 
-        <% for(var i = 1; i < Math.ceil(total_count/num_items_per_page) + 1; i++) { %>
-            <div class="btn btn-primary" id="navigate-to"><%-i %></div>
-        <% } %>
-    </div>
 </div>
+
+<nav>
+    <ul class="pagination">
+        <% var paginationItemCount = Math.ceil(total_count/num_items_per_page) + 1 %>
+        <% if (typeof current_page_number != 'undefined' && current_page_number > 1) { %>
+        <li>
+            <a href="#" class="previous" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <% } %>
+        <% for(var i = 1; i < paginationItemCount; i++) { %>
+            <li class="<% if ((typeof current_page_number != 'undefined' && current_page_number == i)
+                || (typeof current_page_number == 'undefined' && i == 1)) { %>
+            disabled
+            <% } else { %>navigate-to<% } %>"><a href="#"><%-i %></a></li>
+        <% } %>
+
+        <% if ((typeof current_page_number != 'undefined' && (paginationItemCount - current_page_number - 1) >= 1) || (typeof current_page_number == 'undefined')) { %>
+        <li>
+            <a href="#" class="next" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        <% } %>
+
+    </ul>
+</nav>

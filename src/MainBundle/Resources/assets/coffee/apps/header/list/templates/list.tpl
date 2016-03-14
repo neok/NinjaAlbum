@@ -1,9 +1,6 @@
-
-<div class="navbar">
+<a class="menu" href="#albums">Main  menu(click me please)</a>
+<div class="navbar navbar-inverse nav-collapse collapse">
     <div class="container">
-        <a class="brand" href="#albums">Main  menu</a>
-        <div class="nav-collapse">
-            <ul class="nav"></ul>
-        </div>
+            <ul class="nav navbar-nav"></ul>
     </div>
 </div>

@@ -11,6 +11,7 @@ define [
       navigate: (e) ->
         e.preventDefault()
         @trigger 'navigate', @model
+
       onRender: ->
         if @model.selected
           @$el.addClass 'active'
@@ -20,10 +21,10 @@ define [
       className: 'navbar'
       childView: View.Header
       childViewContainer: 'ul'
-      events: 'click a.brand': 'brandClicked'
-      brandClicked: (e) ->
+      events: 'click a.menu': 'menuClicked'
+      menuClicked: (e) ->
         e.preventDefault()
-        @trigger 'brand:clicked'
+        $('.nav-collapse').toggleClass 'collapse'
     )
 
   AlbumManager.HeaderApp.List.View

@@ -15,9 +15,10 @@ define [
     View.Album = Marionette.ItemView.extend(
       tagName: 'tr'
       template: listItemTpl
-      events: 'click': 'highlightName'
-      triggers: 'click td a.js-show': 'album:show'
-
+      events:
+        'click': 'highlightName'
+      triggers:
+        'click td a.js-show': 'album:show'
     )
 
 
@@ -29,7 +30,6 @@ define [
       childViewContainer: 'tbody'
       initialize: ->
         @listenTo @collection, 'reset', ->
-
           @attachHtml = (collectionView, childView, index) ->
             collectionView.$el.append childView.el
             return
@@ -37,7 +37,6 @@ define [
           return
         return
       onRenderCollection: ->
-
         @attachHtml = (collectionView, childView, index) ->
           collectionView.$el.prepend childView.el
           return

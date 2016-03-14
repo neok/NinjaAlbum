@@ -1,6 +1,6 @@
 <thead>
 <tr>
-    <th>Name</th>
+    <th>Album List</th>
 
 </tr>
 </thead>

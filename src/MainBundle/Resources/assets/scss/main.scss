@@ -1,13 +1,29 @@
-img {
-  width: 100%;
-  height: auto;
-}
-.image {
-  float: left;
-  height: 50px;
-  width: 100px;
-}
-.pagination {
-  clear: both;
-  margin-top: 150px;
+body {
+  background-color: #ece8da;
+  font-family: Verdana, Arial, sans-serif;
+
+  #app-container {
+    width: 1024px;
+    margin: 0 auto;
+
+    .image {
+      width: 200px;
+      height: auto;
+      float: left;
+      margin: 0 10px 5px 0;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .pagination {
+      clear: both;
+      margin: 10px 0;
+      width: 1024px;
+    }
+
+  }
+
 }

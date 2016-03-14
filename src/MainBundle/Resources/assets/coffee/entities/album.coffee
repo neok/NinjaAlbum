@@ -1,6 +1,5 @@
 define [
   'app'
-  'apps/config/storage/localstorage'
 ], (AlbumManager) ->
   AlbumManager.module 'Entities', (Entities, AlbumManager, Backbone, Marionette, $, _) ->
     Entities.Album = Backbone.Model.extend(
@@ -12,14 +11,9 @@ define [
         url
     )
 
-    #Entities.configureStorage 'AlbumManager.Entities.Album', Entities.Album
-
-
     Entities.AlbumCollection = Backbone.Collection.extend(
       url: 'api/albums'
       model: Entities.Album)
-
-    #Entities.configureStorage 'AlbumManager.Entities.AlbumCollection', Entities.AlbumCollection
 
     API =
       getAlbumEntities: ->

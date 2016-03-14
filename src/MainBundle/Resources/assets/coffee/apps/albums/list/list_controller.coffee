@@ -13,12 +13,12 @@ define [
         AlbumManager.regions.main.show loadingView
         fetchingAlbums = AlbumManager.request('album:entities')
         albumListLayout = new (View.Layout)
-        console.log(fetchingAlbums)
+
         albumsListView = new (View.Albums)(collection: fetchingAlbums)
 
         albumListLayout.on 'show', ->
           albumListLayout.albumsRegion.show albumsListView
-#
+
         albumsListView.on "childview:album:show", (childView, args) ->
           AlbumManager.trigger("album:show", args.model.get("id"));
 

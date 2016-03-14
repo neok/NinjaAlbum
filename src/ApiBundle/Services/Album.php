@@ -48,13 +48,6 @@ class Album
         return $this->paginator;
     }
 
-//    /**
-//     * @return \Symfony\Component\DependencyInjection\Container
-//     */
-//    public function getContainer()
-//    {
-//        return $this->container;
-//    }
 
     /**
      * @return array

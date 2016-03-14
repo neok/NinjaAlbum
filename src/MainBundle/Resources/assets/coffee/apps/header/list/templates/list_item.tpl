@@ -1,1 +1,1 @@
-<li><a href="#<%- navigationTrigger %>"><%- navigationTrigger %></a></li>
+<a href="#<%- navigationTrigger %>"><%- name %></a>
