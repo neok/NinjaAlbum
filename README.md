@@ -12,8 +12,7 @@ USAGE:
 
 @TODO
 ---
-- Add some styles
-- Make pagination active class
+- Implement Create & Edit Album/Images
+- Implement Backbone.localstorage
 - Delete AppBundle
-- Move Entity and other related stuff to ApiBundle
 - implement Cache in Memcached service
