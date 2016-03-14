@@ -9,6 +9,9 @@ USAGE:
 - npm install
 - bower install
 - grunt
+- composer install
+- setup nginx/apache - [http://symfony.com/doc/current/cookbook/configuration/web_server_configuration.html]
+- or u can use php built in web server `php -S 127.0.0.1:8000` but change image path then. :/
 
 @TODO
 ---

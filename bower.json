@@ -17,6 +17,7 @@
         "jquery-ui": "*",
         "spin.js": "*",
         "moment": "*",
-        "backbone-query-parameters": "*"
+        "backbone-query-parameters": "*",
+        "requirejs-underscore-tpl": "*"
     }
 }
